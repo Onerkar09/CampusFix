@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusFix</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f6fb;
+      color: #172033;
+    }
+    header {
+      background: #172554;
+      color: white;
+      padding: 22px 8%;
+    }
+    main {
+      max-width: 850px;
+      margin: 45px auto;
+      padding: 25px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px #0000000d;
+    }
+    input, select, textarea, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 15px;
+      border: 1px solid #d1d9e6;
+      border-radius: 8px;
+      font: inherit;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CampusFix</h1>
+    <p>Make your campus better, one report at a time.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Report a Campus Issue</h2>
+      <form id="issueForm">
+        <label for="title">Issue title</label>
+        <input id="title" placeholder="e.g. Broken classroom fan" required>
+
+        <label for="category">Category</label>
+        <select id="category">
+          <option>Electricity</option>
+          <option>Cleanliness</option>
+          <option>Water</option>
+          <option>Infrastructure</option>
+        </select>
+
+        <label for="location">Location</label>
+        <input id="location" placeholder="e.g. Building A, Room 201" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Describe the problem"></textarea>
+
+        <button type="submit">Submit Report</button>
+      </form>
+      <p id="message"></p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("issueForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("message").textContent =
+        "Practice report submitted successfully!";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
